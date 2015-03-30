@@ -13,7 +13,10 @@ class RamblesController < ApplicationController
     else
       flash[:alert] = "There was a problem with your ramble"
     end
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
   end
 
   private
