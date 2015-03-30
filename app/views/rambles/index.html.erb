@@ -1,0 +1,16 @@
+<div class="col-sm-4">
+  <div class="well">
+    <%= form_for Ramble.new do |f| %>
+      <%= f.label :content %>
+      <%= f.text_area :content, rows: 10 %>
+      <%= f.submit "Rbl" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-sm-8">
+    <% @rambles.each do |r| %>
+      <h5><%= r.user.email %></h5>
+      <p><%= r.content %></p>
+    <% end %>
+</div>
